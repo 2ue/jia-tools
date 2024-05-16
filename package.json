@@ -1,0 +1,53 @@
+{
+  "name": "jiatools",
+  "version": "0.0.1",
+  "description": "A commonly used JavaScript-related toolset, including common null checking, judgment, etc., which can be used in native JavaScript, vue, react and other frameworks, and supports on-demand references",
+  "main": "dist/jia-tools.umd.js",
+  "module": "dist/jia-tools.es.js",
+  "types": "dist/types/main/index.d.ts",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rimraf -rf ./dist && rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2ue/jia-tools.git"
+  },
+  "keywords": [
+    "javascript",
+    "tools",
+    "utils"
+  ],
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": {
+    "name": "2ue",
+    "email": "jie746635835@163.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2ue/jia-tools/issues"
+  },
+  "homepage": "https://github.com/2ue/jia-tools#readme",
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-typescript": "^7.24.1",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.14.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "glob": "^10.3.15"
+  }
+}
