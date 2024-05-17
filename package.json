@@ -15,8 +15,14 @@
   },
   "keywords": [
     "javascript",
+    "typescript",
+    "function",
+    "vue",
+    "react",
     "tools",
-    "utils"
+    "tool",
+    "utils",
+    "util"
   ],
   "files": [
     "dist",
