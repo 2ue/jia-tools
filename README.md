@@ -12,5 +12,11 @@ Through the npm package manager, you can easily integrate `jia-tools` into your 
 npm install --save jia-tools
 ```
 
+## Functions
+
+- is-type
+- get-type
+- is-blank-value
+- string-to-json
 
 ## Change logs

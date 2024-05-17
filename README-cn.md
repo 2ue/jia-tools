@@ -9,3 +9,10 @@
 ``` shell
 npm install --save jia-tools
 ```
+
+## 方法集合
+
+- is-type
+- get-type
+- is-blank-value
+- string-to-json
