@@ -29,8 +29,11 @@ jobs:
 
       - name: Set Git user and email
         run: |
-          git config --local user.name ${{vars.NAME}}
-          git config --local user.email ${{vars.EMAIL}}
+          ssh -T git@github.com
+#          git config --local user.name ${{vars.NAME}}
+#          git config --local user.email ${{vars.EMAIL}}
+          git config --local user.name "2ue"
+          git config --local user.email "jie746635835@163.com"
           git config --local --list
 
       - name: Update Version
@@ -67,7 +70,7 @@ jobs:
           ls -al
           cat ./.npmrc
 
-      - name: Publish
+      - name: Npm Publish
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
