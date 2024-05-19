@@ -29,7 +29,6 @@ jobs:
 
       - name: Set Git user and email
         run: |
-          ssh -T git@github.com
 #          git config --local user.name ${{vars.NAME}}
 #          git config --local user.email ${{vars.EMAIL}}
           git config --local user.name "2ue"
