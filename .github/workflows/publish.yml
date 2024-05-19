@@ -51,8 +51,6 @@ jobs:
       - name: Install pnpm
         run: |
           npm install -g pnpm
-          # pnpm config set store-dir $(pwd)/.pnpm-store
-          # pnpm config set recursive-optional true
 
       - name: Install Dependence
         run: pnpm i
@@ -99,6 +97,7 @@ jobs:
 
       - name: Commit and push Version
         run: |
+          git branch
           git add package.json
           git commit -m "Bump version to ${{ env.TAG_NAME }}"
           git tag -a "${{ env.TAG_NAME }}" -m "Release ${{ env.TAG_NAME }}"

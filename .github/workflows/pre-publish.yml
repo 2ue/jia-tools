@@ -31,8 +31,6 @@ jobs:
       - name: Install pnpm
         run: |
           npm install -g pnpm
-          # pnpm config set store-dir $(pwd)/.pnpm-store
-          # pnpm config set recursive-optional true
 
       - name: Install Dependence
         run: pnpm i
