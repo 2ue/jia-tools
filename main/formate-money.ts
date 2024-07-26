@@ -1,5 +1,6 @@
 import { isBlank } from "./is-blank";
 import { isNumber } from "./is-number";
+
 export function formateMoney(
   m: string | number,
   format?: Record<string, any>
