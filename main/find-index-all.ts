@@ -1,6 +1,5 @@
-
-import { isBlank } from './is-blank';
-import { isType } from './is-type';
+import { isBlank } from "./is-blank";
+import { isType } from "./is-type";
 type Filter = (item: any, i: number) => boolean;
 
 /**
@@ -10,14 +9,14 @@ type Filter = (item: any, i: number) => boolean;
  * @returns 元素的index[]
  */
 export function findIndexAll(arr: [], filter: Filter): number[] {
-    const indexArr: number[] = [];
-    if (isBlank(filter) || !isType(filter, 'function')) {
-        return [];
+  const indexArr: number[] = [];
+  if (isBlank(filter) || !isType(filter, "function")) {
+    return [];
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (filter(arr[i], i)) {
+      indexArr.push(i);
     }
-    for (let i = 0; i < arr.length; i++) {
-        if (filter(arr[i], i)) {
-            indexArr.push(i);
-        }
-    }
-    return indexArr;
+  }
+  return indexArr;
 }
