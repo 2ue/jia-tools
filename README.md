@@ -19,9 +19,17 @@ yarn install --save jia-tools
 
 ## Functions
 
+- filterNullValue
+- findBy
+- findIndex
+- findPath
+- formateMoney
 - getType
-- isType
 - isBlank
+- isNull
+- isNumber
+- isTrimNull
+- isType
 - string2Json
 
 ### TODO
