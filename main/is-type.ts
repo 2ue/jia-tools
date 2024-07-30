@@ -9,4 +9,3 @@ import { getType } from "./get-type";
 export function isType<P>(value: any, type: string): value is P {
   return getType(value) === type.toLowerCase();
 }
-// isType<string>('xxx', 'string')

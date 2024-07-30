@@ -1,6 +1,13 @@
 import { isBlank } from "./is-blank";
 import { isNumber } from "./is-number";
 
+/**
+ * 格式化金额格式
+ * @param {string|number} m: 需要格式化的金额
+ * @param {Record<string, any>} format
+ * @param {any} any>
+ * @returns {any}
+ */
 export function formateMoney(
   m: string | number,
   format?: Record<string, any>

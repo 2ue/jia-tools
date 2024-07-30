@@ -1,16 +1,32 @@
 import { isBlank } from "./is-blank";
 import { isType } from "./is-type";
-type Filter = (item: any, i: number) => boolean;
+import type { ObjectType, FilterObj, FilterOption } from '../types';
 
-export function findBy(arr: [], filter: Filter): number[] {
-  const indexArr: number[] = [];
-  if (isBlank(filter) || !isType<"Function">(filter, "function")) {
-    return [];
+type Value<T> = Record<string, T>;
+
+/**
+ * 查找符合特征的元素index
+ * @export
+ * @template T
+ * @param {T[]} obj
+ * @param {FilterObj} filter
+ * @param {FilterOption} options
+ * @returns {Record<string, T>}
+ */
+export function findBy<T>(obj: Value<T>, filter: FilterObj<T>, options?: FilterOption): Value<T> {
+  const result: Value<T> = {};
+  if (isBlank(filter) || !isType<ObjectType>(obj, 'object') || !isType<Function>(filter, "function")) {
+    return {};
   }
-  for (let i = 0; i < arr.length; i++) {
-    if (filter(arr[i], i)) {
-      indexArr.push(i);
+  const keys = Object.keys(obj);
+  for (let i = 0; i < keys.length; i++) {
+    if (filter(obj[keys[i]], keys[i])) {
+      result[keys[i]] = obj[keys[i]];
+      // 0或者不定义表示返回所有
+      if (options?.returnNum && Object.keys(result).length >= options?.returnNum) {
+        break;
+      }
     }
   }
-  return indexArr;
+  return result;
 }

@@ -9,15 +9,20 @@
 Through the npm package manager, you can easily integrate `jia-tools` into your project. Simply run the following command in the root directory of your project to complete the installation:
 
 ``` shell
+# npm
 npm install --save jia-tools
+# yarn
+yarn add jia-tools
+# pnpm
+yarn install --save jia-tools
 ```
 
 ## Functions
 
-- is-type
-- get-type
-- is-blank-value
-- string-to-json
+- getType
+- isType
+- isBlank
+- string2Json
 
 ### TODO
 
