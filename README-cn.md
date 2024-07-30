@@ -12,7 +12,15 @@ npm install --save jia-tools
 
 ## 方法集合
 
-- is-type
-- get-type
-- is-blank-value
-- string-to-json
+- filterNullValue
+- findBy
+- findIndex
+- findPath
+- formateMoney
+- getType
+- isBlank
+- isNull
+- isNumber
+- isTrimNull
+- isType
+- string2Json

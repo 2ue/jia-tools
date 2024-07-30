@@ -29,8 +29,8 @@ jobs:
 
       - name: Set Git user and email
         run: |
-          git config --local user.name "2ue"
-          git config --local user.email "jie746635835@163.com"
+          git config --local user.name ${{vars.NAME}}
+          git config --local user.email ${{vars.EMAIL}}
           git config --local --list
 
       - name: Update Version
@@ -54,7 +54,7 @@ jobs:
           npm install -g pnpm
 
       - name: Install Dependence
-        run: pnpm i
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build dist
         run: |
@@ -95,22 +95,11 @@ jobs:
           prerelease: false
           generate_release_notes: true
           files: ${{ env.TAG_NAME }}.zip
-      # - name: Commit and push Version
-      #   run: |
-      #     rm -rf ./.npmrc
-      #     git branch
-      #     git add package.json
-      #     git commit -m "Bump version to ${{ env.TAG_NAME }}"
-      #     git tag -a "${{ env.TAG_NAME }}" -m "Release ${{ env.TAG_NAME }}"
+
       - name: Commit and push Version
         run: |
-            git add package.json
-            git commit -m "Bump version to ${{ env.TAG_NAME }}"
-            git tag -a "${{ env.TAG_NAME }}" -m "Release ${{ env.TAG_NAME }}"
-            git push origin main
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.TOKEN }}
-      #     branch: ${{ github.ref }}
+          git add package.json
+          git commit -m "Bump version to ${{ env.TAG_NAME }}"
+          git tag -a "${{ env.TAG_NAME }}" -m "Release ${{ env.TAG_NAME }}"
+          git push origin main
 
