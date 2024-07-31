@@ -1,6 +1,6 @@
 {
   "name": "jia-tools",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A commonly used JavaScript-related toolset, including common null checking, judgment, etc., which can be used in native JavaScript, vue, react and other frameworks, and supports on-demand references",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
@@ -54,6 +54,5 @@
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
