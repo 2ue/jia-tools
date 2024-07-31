@@ -76,11 +76,6 @@ jobs:
         run: |
           zip -r ${{ env.TAG_NAME }}.zip ./package.json ./dist ./LICENSE
           ls -al
-      
-      # - name: "✏️ Generate release changelog"
-      #   uses: heinrichreimer/action-github-changelog-generator@v2.3
-      #   with:
-      #     token: ${{ secrets.TOKEN }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
