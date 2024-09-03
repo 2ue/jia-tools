@@ -7,7 +7,7 @@ import type { FilterArr, FilterOption } from '../types';
  * @export
  * @template T
  * @param {T[]} arr - 目标数组
- * @param {Filter} filter - 条件判断，返回true则会返回对应index，反之不返回；如果filter不传，则返回空数组
+ * @param {FilterArr} filter - 条件判断，返回true则会返回对应index，反之不返回；如果filter不传，则返回空数组
  * @param {FilterOption} options - 处理的一些配置
  * @returns {number[]} 符合特征的元素的index[]
  */
