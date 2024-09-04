@@ -14,12 +14,12 @@ npm install --save jia-tools
 # yarn
 yarn add jia-tools
 # pnpm
-yarn install --save jia-tools
+pnpm install --save jia-tools
 ```
 
 ## Functions
 
-- filterNullValue
+- filterBlankValue
 - findBy
 - findIndex
 - findPath
