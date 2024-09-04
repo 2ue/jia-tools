@@ -14,14 +14,14 @@ npm install --save jia-tools
 # yarn
 yarn add jia-tools
 # pnpm
-pnpm install --save jia-tools
+pnpm add --save jia-tools
 ```
 
 ## Functions
 
 - filterBlankValue
 - findBy
-- findIndex
+- findIndexAll
 - findPath
 - formateMoney
 - getType
@@ -32,6 +32,10 @@ pnpm install --save jia-tools
 - isType
 - string2Json
 
-### TODO
+### Feature
+
+- oneOf
+- allOf
+- someOf
 
 ## Change logs
