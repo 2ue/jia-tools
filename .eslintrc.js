@@ -11,7 +11,7 @@ module.exports = {
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
-        "globalThis":"readonly"
+        "globalThis": "readonly"
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -19,18 +19,27 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "jest"
     ],
     "rules": {
         // 允许 debugger 运行在 开发 环境中
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         // 关闭 var 关键字的提示
-        "no-var":'off',
+        "no-var": 'off',
         // 警告 case 穿透
-        "no-fallthrough":'warn',
+        "no-fallthrough": 'warn',
         // 无用变量
         "no-unused-vars": "off",
         // typescript 的 无用变量
         "@typescript-eslint/no-unused-vars": "error",
-    }
+    },
+    "overrides": [
+        {
+            "files": ["__tests__/**/*", 'node_modules'],
+            "env": {
+                "jest": true
+            }
+        }
+    ]
 };
