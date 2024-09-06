@@ -1,4 +1,5 @@
-import { isNull } from "./is-null";
+import { isBlank } from './is-blank';
+import { isType } from './is-type';
 
 // 直接使用isNaN判断不准确，需要使用Number方法将其转换成数字再比较
 // 在使用Number方法进行转换时，‘',null等情况会被转换成0，所有需要使用isNull进行判断
@@ -10,7 +11,10 @@ import { isNull } from "./is-null";
  * @returns {value is number}
  */
 export function isNumber(value: any): value is number {
-  return !(isNull(value) || isNaN(Number(value)));
+  if (isType<boolean>(value, 'boolean')) return false;
+  if (isBlank(value)) return false;
+  if (isNaN(Number(value))) return false;
+  return true;
 }
 
 // typeof，isNaN， Number，Number.isFinite， Object.prototype.toString，正则
@@ -27,11 +31,11 @@ export function isNumber(value: any): value is number {
 // }
 
 // nullValue.forEach(v => {
-//   obj["typeof(v)"][String(v)] = typeof v;
-//   obj["isNaN(v)"][String(v)] = isNaN(v);
-//   obj["Number.isFinite(v)"][String(v)] = Number.isFinite(v);
-//   obj["Number(v)"][String(v)] = Number(v);
-//   obj["Object.prototype.toString.call(v)"][String(v)] = Object.prototype.toString.call(v)
-//   obj["Reg(v)^-?\\d+(\\.\\d+)?$"][String(v)] = /^-?\d+(\.\d+)?$/.test(v)
+//   obj['typeof(v)'][String(v)] = typeof v;
+//   obj['isNaN(v)'][String(v)] = isNaN(v);
+//   obj['Number.isFinite(v)'][String(v)] = Number.isFinite(v);
+//   obj['Number(v)'][String(v)] = Number(v);
+//   obj['Object.prototype.toString.call(v)'][String(v)] = Object.prototype.toString.call(v)
+//   obj['Reg(v)^-?\\d+(\\.\\d+)?$'][String(v)] = /^-?\d+(\.\d+)?$/.test(v)
 // });
 // console.table(obj);

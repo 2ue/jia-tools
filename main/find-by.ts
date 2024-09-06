@@ -1,5 +1,5 @@
-import { isBlank } from "./is-blank";
-import { isType } from "./is-type";
+import { isBlank } from './is-blank';
+import { isType } from './is-type';
 import type { ObjectType, FilterObj, FilterOption } from '../types';
 
 type Value<T> = Record<string, T>;
@@ -15,7 +15,7 @@ type Value<T> = Record<string, T>;
  */
 export function findBy<T>(obj: Value<T>, filter: FilterObj<T>, options?: FilterOption): Value<T> {
   const result: Value<T> = {};
-  if (isBlank(filter) || !isType<ObjectType>(obj, 'object') || !isType<Function>(filter, "function")) {
+  if (!isType<ObjectType>(obj, 'object') || !isType<Function>(filter, 'function')) {
     return {};
   }
   const keys = Object.keys(obj);

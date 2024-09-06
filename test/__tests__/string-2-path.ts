@@ -1,4 +1,4 @@
-import { string2Path } from "../../main/string-2-path";
+import { string2Path } from '../../main/string-2-path';
 
 const values: Record<string, string[]> = {
   '0.0.children.0.name': ['0', '0', 'children', '0', 'name'],
@@ -9,7 +9,7 @@ const values: Record<string, string[]> = {
 const arrValue = ['0', '0', 'children', '0', 'name']
 
 
-test("findPath custome defined fieldKeys", () => {
+test('string2Path', () => {
   Object.keys(values).forEach((v: string) => {
     expect(string2Path(v)).toEqual(values[v]);
   });

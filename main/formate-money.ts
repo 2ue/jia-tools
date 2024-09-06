@@ -1,5 +1,5 @@
-import { isBlank } from "./is-blank";
-import { isNumber } from "./is-number";
+import { isBlank } from './is-blank';
+import { isNumber } from './is-number';
 
 /**
  * 格式化金额格式
@@ -12,9 +12,9 @@ export function formateMoney(
   m: string | number,
   format?: Record<string, any>
 ): string {
-  if (isBlank(m) || !isNumber(m)) return "0.00";
+  if (isBlank(m) || !isNumber(m)) return '0.00';
   return Number(Number(m).toFixed(2)).toLocaleString(
-    "zh-CN",
-    format ?? { style: "currency", currency: "CNY" }
+    'zh-CN',
+    format ?? { style: 'currency', currency: 'CNY' }
   );
 }

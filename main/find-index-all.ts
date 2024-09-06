@@ -1,5 +1,5 @@
-import { isBlank } from "./is-blank";
-import { isType } from "./is-type";
+import { isBlank } from './is-blank';
+import { isType } from './is-type';
 import type { FilterArr, FilterOption } from '../types';
 
 /**
@@ -13,7 +13,7 @@ import type { FilterArr, FilterOption } from '../types';
  */
 export function findIndexAll<T>(arr: T[], filter?: FilterArr<T>, options?: FilterOption): number[] {
   const indexArr: number[] = [];
-  if (isBlank(filter) || !Array.isArray(arr) || !isType<Function>(filter, "function")) {
+  if (!Array.isArray(arr) || !isType<Function>(filter, 'function')) {
     return [];
   }
   for (let i = 0; i < arr.length; i++) {

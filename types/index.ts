@@ -1,3 +1,5 @@
+export type NullValue = null | undefined | ''
+export type BlankValue = NullValue | {} | []
 export type ObjectType = Record<string, any>
 export type FilterArr<T> = (item: T, i: number) => boolean
 export type FilterObj<T> = (value: T, key: string) => boolean

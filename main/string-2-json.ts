@@ -1,5 +1,5 @@
 import { isType } from './is-type';
-import { isNull } from "./is-null";
+import { isNull } from './is-null';
 
 /**
  * 安全的格式化string为json数据
