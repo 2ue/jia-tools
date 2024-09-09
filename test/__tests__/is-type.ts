@@ -31,7 +31,6 @@ const values: [any, string][] = [
 
 test('isType', () => {
   values.forEach(([v, t]) => {
-    console.log('v', v, t);
     expect(isType(v, t)).toEqual(true);
   });
 });

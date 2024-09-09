@@ -1,5 +1,7 @@
 # JS工具库：jia-tools
 
+> !important: 目前处于积极开发中，可能有破坏性更新
+
 > `jia-tools`是一个js的工具库，提供了常用的函数工具。
 
 ## 和lodash等函数库的区别

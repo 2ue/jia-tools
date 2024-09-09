@@ -1,29 +1,26 @@
-import { isBlank } from './is-blank';
 import { isType } from './is-type';
-import type { ObjectType, FilterObj, FilterOption } from '../types';
-
-type Value<T> = Record<string, T>;
+import type { FilterArr, FilterOption } from '../types';
+type ArrValue<T> = T[];
 
 /**
- * 查找符合特征的元素index
+ * 查找数组集合中符合特征的元素
  * @export
  * @template T
- * @param {T[]} obj
- * @param {FilterObj} filter
+ * @param {ArrValue<T>} arr
+ * @param {FilterArr} filter
  * @param {FilterOption} options
- * @returns {Record<string, T>}
+ * @returns {ArrValue<T>}
  */
-export function findBy<T>(obj: Value<T>, filter: FilterObj<T>, options?: FilterOption): Value<T> {
-  const result: Value<T> = {};
-  if (!isType<ObjectType>(obj, 'object') || !isType<Function>(filter, 'function')) {
-    return {};
+export function findBy<T>(arr: ArrValue<T>, filter: FilterArr<T>, options?: FilterOption): ArrValue<T> {
+  const result: ArrValue<T> = [];
+  if (!isType<Function>(filter, 'function')) {
+    return [];
   }
-  const keys = Object.keys(obj);
-  for (let i = 0; i < keys.length; i++) {
-    if (filter(obj[keys[i]], keys[i])) {
-      result[keys[i]] = obj[keys[i]];
+  for (let i = 0; i < arr.length; i++) {
+    if (filter(arr[i], i)) {
+      result.push(arr[i]);
       // 0或者不定义表示返回所有
-      if (options?.returnNum && Object.keys(result).length >= options?.returnNum) {
+      if (options?.returnNum && result.length >= options?.returnNum) {
         break;
       }
     }

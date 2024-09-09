@@ -1,5 +1,5 @@
 // import { get } from 'lodash-es';
-import { findPath, FindPathFieldKeys, FindPathItem } from '../../main/find-path';
+import { findPath } from '../../main/find-path';
 
 const tree1 = [
   {

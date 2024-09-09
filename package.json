@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rimraf -rf ./dist && rollup --config",
-    "test": "jest"
+    "gen:test": "node ./test/generate-test",
+    "test": "jest",
+    "test:file": "node ./test/test-s-file"
   },
   "repository": {
     "type": "git",
@@ -52,10 +54,12 @@
     "babel-jest": "^29.7.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-jest": "^28.8.3",
+    "fs-extra": "^11.2.0",
     "glob": "^10.3.15",
     "jest": "^29.7.0",
     "jest-canvas-mock": "^2.5.2",
     "jest-environment-jsdom": "^29.7.0",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "rimraf": "^5.0.5",
     "rollup": "^4.14.3",
@@ -64,6 +68,10 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "zx": "^8.1.5"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^5.5.0"
   }
 }
