@@ -1,4 +1,4 @@
-import { filterEmptyValue } from '../../main/filter-blank-value';
+import { filterBlankValue } from '../../main/filter-blank-value';
 // null表示要测试的值，字符串'null'表示要对比的结果
   type ValueArr = [any, any]
 const values: ValueArr[] = [
@@ -12,6 +12,6 @@ const values: ValueArr[] = [
 
 test('filterBlankValue', () => {
   values.forEach(([v, t]: ValueArr) => {
-    expect(filterEmptyValue(v)).toEqual(t);
+    expect(filterBlankValue(v)).toEqual(t);
   });
 })

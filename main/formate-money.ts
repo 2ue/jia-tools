@@ -15,6 +15,6 @@ export function formateMoney(
   if (isBlank(m) || !isNumber(m)) return '0.00';
   return Number(Number(m).toFixed(2)).toLocaleString(
     'zh-CN',
-    format ?? { style: 'currency', currency: 'CNY' }
+    format,
   );
 }

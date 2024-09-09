@@ -8,7 +8,7 @@ import { isType } from './is-type';
  * @param {*} data
  * @returns {T}
  */
-export function filterEmptyValue<T>(data: any): T {
+export function filterBlankValue<T>(data: any): T {
   if (isBlank(data) || !isType<Record<string, any>>(data, 'object')) {
     return data;
   }
