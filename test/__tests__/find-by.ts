@@ -3,6 +3,7 @@ import { findBy } from '../../main/find-by';
   type ValueArr = [any, any]
 const values: ValueArr[] = [
   [[1, 1.1, 2, 3, 4, -6], [3, 4]],
+  [[1, 1.1, 2, -1, -34, -6], []],
 ]
 
 test('findBy', () => {

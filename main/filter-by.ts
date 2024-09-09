@@ -12,7 +12,7 @@ type ObjValue<T> = Record<string, T>;
  * @param {FilterOption} options
  * @returns {Record<string, T>}
  */
-export function filterBy<T>(obj: ObjValue<T>, filter: FilterObj<T>, options?: FilterOption): ObjValue<T> {
+export function filterBy<T>(obj: ObjValue<T>, filter?: FilterObj<T>, options?: FilterOption): ObjValue<T> {
   const result: ObjValue<T> = {};
   if (!isType<ObjectType>(obj, 'object') || !isType<Function>(filter, 'function')) {
     return {};

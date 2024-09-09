@@ -5,7 +5,7 @@ const resolve = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const { terser } = require('rollup-plugin-terser');
 // 多入口，模块化输出
-const inputs = require('./inputs');
+const inputs = require('./lib/auto-import');
 
 module.exports = defineConfig({
     input: inputs,
