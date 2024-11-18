@@ -13,5 +13,5 @@
     "esModuleInterop": true,
     "sourceMap": true
   },
-  "exclude": ["node_modules", "dist", "test"]
+  "exclude": ["node_modules", "dist", "test", "./jest.config.ts"]
 }
