@@ -1,5 +1,5 @@
-import { isBlank } from './is-blank';
-import { isType } from './is-type';
+import { isBlank } from "./is-blank";
+import { isType } from "./is-type";
 
 /**
  * 过滤对象数据中的空值
@@ -9,12 +9,20 @@ import { isType } from './is-type';
  * @returns {T}
  */
 export function filterBlankValue<T>(data: any): T {
-  if (isBlank(data) || !isType<Record<string, any>>(data, 'object')) {
+  const valueIsObject = isType<Record<string, any>>(data, "object");
+  const valueIsArray = Array.isArray(data);
+  if (isBlank(data) || !valueIsArray || !valueIsObject) {
     return data;
   }
-  const temp: Record<string, any> = {};
-  Object.keys(data).forEach((key) => {
-    if (!isBlank(data[key])) temp[key] = data[key];
-  });
-  return temp as any;
+  if (valueIsArray) {
+    return data.filter(v => !isBlank(v)) as T;
+  }
+  if (valueIsArray) {
+    const temp: Record<string, any> = {};
+    Object.keys(data).forEach((key) => {
+      if (!isBlank(data[key])) temp[key] = data[key];
+    });
+    return temp as T;
+  }
+  return data;
 }
