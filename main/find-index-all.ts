@@ -1,4 +1,3 @@
-import { isBlank } from './is-blank';
 import { isType } from './is-type';
 import type { FilterArr, FilterOption } from '../types';
 
@@ -11,7 +10,11 @@ import type { FilterArr, FilterOption } from '../types';
  * @param {FilterOption} options - 处理的一些配置
  * @returns {number[]} 符合特征的元素的index[]
  */
-export function findIndexAll<T>(arr: T[], filter?: FilterArr<T>, options?: FilterOption): number[] {
+export function findIndexAll<T>(
+  arr: T[],
+  filter?: FilterArr<T>,
+  options?: FilterOption
+): number[] {
   const indexArr: number[] = [];
   if (!Array.isArray(arr) || !isType<Function>(filter, 'function')) {
     return [];

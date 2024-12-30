@@ -12,9 +12,16 @@ type ObjValue<T> = Record<string, T>;
  * @param {FilterOption} options
  * @returns {Record<string, T>}
  */
-export function filterBy<T>(obj: ObjValue<T>, filter?: FilterObj<T>, options?: FilterOption): ObjValue<T> {
+export function filterBy<T>(
+  obj: ObjValue<T>,
+  filter?: FilterObj<T>,
+  options?: FilterOption
+): ObjValue<T> {
   const result: ObjValue<T> = {};
-  if (!isType<ObjectType>(obj, 'object') || !isType<Function>(filter, 'function')) {
+  if (
+    !isType<ObjectType>(obj, 'object') ||
+    !isType<Function>(filter, 'function')
+  ) {
     return {};
   }
   const keys = Object.keys(obj);
@@ -22,7 +29,10 @@ export function filterBy<T>(obj: ObjValue<T>, filter?: FilterObj<T>, options?: F
     if (filter(obj[keys[i]], keys[i])) {
       result[keys[i]] = obj[keys[i]];
       // 0或者不定义表示返回所有
-      if (options?.returnNum && Object.keys(result).length >= options?.returnNum) {
+      if (
+        options?.returnNum &&
+        Object.keys(result).length >= options?.returnNum
+      ) {
         break;
       }
     }

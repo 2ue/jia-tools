@@ -1,19 +1,23 @@
-import { FieldNames, Item } from '../types'
-import { FIELD_NAMES } from '../constans'
+import { FieldNames, Item } from '../types';
+import { FIELD_NAMES } from '../constants';
 
 /**
  * @function 根据value查找对于值
  * @param data
  * @param value
  * @param fieldNames
- * @returns 
+ * @returns
  */
-export function findByValue(data: Item[], value: any, fieldNames?: Partial<FieldNames>): Item | undefined {
+export function findByValue(
+  data: Item[],
+  value: any,
+  fieldNames?: Partial<FieldNames>
+): Item | undefined {
   let result: Item | undefined = undefined;
   const keys: FieldNames = {
     ...FIELD_NAMES,
     ...(fieldNames ?? {}),
-  }
+  };
   const valueKey = keys.value as string;
   const childrenkey = keys.children as string;
   if (Array.isArray(data)) {

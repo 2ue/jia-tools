@@ -12,7 +12,12 @@ import { isNull } from './is-null';
  * @returns {P}
  */
 export function string2Json<P>(str: string, defaultValue?: any): P {
-  if (isNull(str) || !isType<string>(str, 'string') || !/^\{.*\}$/.test(str) || !/^\[.*\]$/.test(str)) {
+  if (
+    isNull(str) ||
+    !isType<string>(str, 'string') ||
+    !/^\{.*\}$/.test(str) ||
+    !/^\[.*\]$/.test(str)
+  ) {
     return defaultValue;
   }
   try {

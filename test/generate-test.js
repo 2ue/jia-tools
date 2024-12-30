@@ -11,8 +11,8 @@ const jsfiles = globSync('./main/**/*.ts', { ignore: ['node_modules/**', '**/*/i
 
 const content = (funName, filePath) => {
   return templateStr
-  .replaceAll('${funName}', funName)
-  .replaceAll('${filePath}', filePath)
+    .replaceAll('${funName}', funName)
+    .replaceAll('${filePath}', filePath)
 };
 
 const files = {};

@@ -11,7 +11,11 @@ type ArrValue<T> = T[];
  * @param {FilterOption} options
  * @returns {ArrValue<T>}
  */
-export function findBy<T>(arr: ArrValue<T>, filter?: FilterArr<T>, options?: FilterOption): ArrValue<T> {
+export function findBy<T>(
+  arr: ArrValue<T>,
+  filter?: FilterArr<T>,
+  options?: FilterOption
+): ArrValue<T> {
   const result: ArrValue<T> = [];
   if (!isType<Function>(filter, 'function')) {
     return [];

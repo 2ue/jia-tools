@@ -13,8 +13,5 @@ export function formateMoney(
   format?: Record<string, any>
 ): string {
   if (isBlank(m) || !isNumber(m)) return '0.00';
-  return Number(Number(m).toFixed(2)).toLocaleString(
-    'zh-CN',
-    format,
-  );
+  return Number(Number(m).toFixed(2)).toLocaleString('zh-CN', format);
 }
