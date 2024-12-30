@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@inquirer/prompts':
-        specifier: ^5.5.0
-        version: 5.5.0
     devDependencies:
       '@babel/core':
         specifier: ^7.24.4
@@ -21,6 +17,9 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.24.1
         version: 7.24.7(@babel/core@7.25.2)
+      '@inquirer/prompts':
+        specifier: ^5.5.0
+        version: 5.5.0
       '@rollup/plugin-commonjs':
         specifier: ^25.0.7
         version: 25.0.8(rollup@4.21.2)
